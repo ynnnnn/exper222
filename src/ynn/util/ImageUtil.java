@@ -1,12 +1,10 @@
 package ynn.util;
 
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-
 
 public class ImageUtil {
 
@@ -16,12 +14,14 @@ public class ImageUtil {
          return new FileInputStream(new File(path));
      } 
      // 读取表中图片获取输出流
+
      public static void readBin2Image(InputStream in, String targetPath) {
          File file = new File(targetPath);
          String path = targetPath.substring(0, targetPath.lastIndexOf("/"));
          if (!file.exists()) {
              new File(path).mkdir();
          }
+ // 读取表中图片获取输出流
          FileOutputStream fos = null;
          try {
              fos = new FileOutputStream(file);
